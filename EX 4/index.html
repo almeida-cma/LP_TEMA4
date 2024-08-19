@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Números</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            color: #555;
+            font-size: 1.2em;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contagem de Números</h1>
+        <ul id="lista-numeros"></ul>
+    </div>
+
+    <script>
+        // Seleciona o elemento <ul> pelo ID
+        const listaNumeros = document.getElementById('lista-numeros');
+
+        // Loop para gerar números de 1 a 5
+        for (let i = 1; i <= 10; i++) {
+            console.log("Número: " + i); // Exibe o número no console
+
+            // Cria um novo item de lista <li> para cada número
+            const item = document.createElement('li');
+            item.textContent = "Número: " + i; // Define o conteúdo do item
+            listaNumeros.appendChild(item); // Adiciona o item à lista <ul>
+        }
+    </script>
+</body>
+</html>

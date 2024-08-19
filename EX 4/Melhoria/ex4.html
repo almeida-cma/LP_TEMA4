@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Números</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.2em;
+            border-collapse: collapse;
+            width: 100%;
+            display: table;
+        }
+        li {
+            display: table-row;
+        }
+        li:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        li:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+        li span {
+            display: table-cell;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .label {
+            font-weight: bold;
+            background-color: #333;
+            color: #fff;
+            border-right: none;
+        }
+        .number {
+            font-size: 1.5em;
+            color: #007BFF;
+            border-left: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contagem de Números</h1>
+        <ul id="lista-numeros"></ul>
+    </div>
+
+    <script>
+        // Seleciona o elemento <ul> pelo ID
+        const listaNumeros = document.getElementById('lista-numeros');
+
+        // Loop para gerar números de 1 a 10
+        for (let i = 1; i <= 10; i++) {
+            // Cria um novo item de lista <li> para cada número
+            const item = document.createElement('li');
+
+            // Cria uma célula para a palavra "Número:"
+            const labelCell = document.createElement('span');
+            labelCell.textContent = "Número:";
+            labelCell.className = 'label'; // Adiciona a classe 'label'
+
+            // Cria uma célula separada para o número
+            const numberCell = document.createElement('span');
+            numberCell.textContent = i;
+            numberCell.className = 'number'; // Adiciona a classe 'number'
+
+            // Adiciona as células ao item <li>
+            item.appendChild(labelCell);
+            item.appendChild(numberCell);
+
+            // Adiciona o item à lista <ul>
+            listaNumeros.appendChild(item);
+        }
+    </script>
+</body>
+</html>
